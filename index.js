@@ -59,7 +59,7 @@ const saveTodos = () => {
 
   renderTodo(newTodo)
 
-  todos.unshift(newTodo)
+  todos.push(newTodo)
 
   const updatedTodos = JSON.stringify(todos)
 
@@ -120,106 +120,3 @@ const handleSaveEdit = (todoDiv, todoText, todoInput, saveBtn, todoId) => {
 document.addEventListener('DOMContentLoaded', renderAllTodos)
 todoBtn.addEventListener('click', handleAddTodo)
 todosList.addEventListener('click', handleTodoClick)
-
-// Helper Functions
-// const getTodoId = (todoDiv) => todoDiv.getAttribute('data-uuid')
-
-// const deleteTodoFromLocalStorage = (todoId) => {
-//   let todos = storedTodosJSON()
-//   todos = todos.filter((todo) => todo.id !== todoId)
-//   localStorage.setItem('todos', JSON.stringify(todos))
-// }
-
-// const removeTodoFromDOM = (todoDiv) => {
-//   todosList.removeChild(todoDiv)
-// }
-
-// const createTodoInput = (placeholderText) => {
-//   const todoInput = document.createElement('input')
-//   todoInput.placeholder = placeholderText
-//   return todoInput
-// }
-
-// const createSaveBtn = () => {
-//   const saveBtn = document.createElement('button')
-//   saveBtn.textContent = 'save'
-//   saveBtn.classList.add('save-btn')
-//   return saveBtn
-// }
-
-// const replaceTextWithInput = (todoDiv, todoText, todoInput, saveBtn) => {
-//   todoDiv.removeChild(todoText)
-//   todoDiv.insertBefore(todoInput, todoDiv.firstChild)
-//   todoDiv.insertBefore(saveBtn, todoDiv.lastChild)
-// }
-
-// const updateTodoText = (todoDiv, todoText, todoInput, saveBtn, updatedTodo) => {
-//   todoText.textContent = updatedTodo || todoInput.placeholder
-//   todoDiv.removeChild(todoInput)
-//   todoDiv.removeChild(saveBtn)
-//   todoDiv.insertBefore(todoText, todoDiv.querySelector('.btn-container'))
-// }
-
-// const updateTodoInStorage = (todoId, updatedTodo) => {
-//   let todos = storedTodosJSON()
-//   todos = todos.map((todo) => {
-//     if (todo.id === todoId) {
-//       return { ...todo, task: updatedTodo }
-//     }
-//     return todo
-//   })
-//   localStorage.setItem('todos', JSON.stringify(todos))
-// }
-
-// const handleTodoChange = (e) => {
-//   if (
-//     e.target.classList.contains('delete-btn') ||
-//     e.target.classList.contains('edit-btn')
-//   ) {
-//     const todoDiv = e.target.closest('.todo-item')
-//     const btnContainer = e.target.closest('.btn-container')
-//     const todoText = btnContainer.previousElementSibling
-//     const todoId = todoDiv.getAttribute('data-uuid')
-//     let todos = storedTodosJSON()
-
-//     if (e.target.classList.contains('delete-btn')) {
-//       deleteTodoFromLocalStorage(todoId)
-//       removeTodoFromDOM(todoDiv)
-//     }
-
-//     if (e.target.classList.contains('edit-btn')) {
-//       e.target.disabled = true
-
-//       const placeholderText = todoText.textContent
-
-//       todoDiv.removeChild(todoText)
-
-//       const todoInput = document.createElement('input')
-//       const saveBtn = document.createElement('button')
-
-//       saveBtn.textContent = 'save'
-//       saveBtn.classList.add('save-btn')
-//       todoInput.placeholder = placeholderText
-
-//       todoDiv.insertBefore(todoInput, todoDiv.firstChild)
-//       todoDiv.insertBefore(saveBtn, todoDiv.lastChild)
-
-//       saveBtn.addEventListener('click', () => {
-//         const updatedTodo = todoInput.value
-//         todoText.textContent = updatedTodo || placeholderText
-//         todoDiv.removeChild(todoInput)
-//         todoDiv.removeChild(saveBtn)
-//         todoDiv.insertBefore(todoText, btnContainer)
-//         e.target.disabled = false
-
-//         todos = todos.map((todo) => {
-//           if (todo.id === todoId) {
-//             return { ...todo, task: updatedTodo }
-//           }
-//           return todo
-//         })
-//         localStorage.setItem('todos', JSON.stringify(todos))
-//       })
-//     }
-//   }
-// }
