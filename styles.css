@@ -1,6 +1,87 @@
+:root {
+  /* fonts */
+  --font-primary: 'Josefin Sans', sans-serif;
+  --font-size: 1.125rem;
+
+  /* colors*/
+  --color-primary-accent: hsl(220, 98%, 61%);
+  --color-primary-check-bg: linear-gradient(
+    hsl(192, 100%, 67%) to hsl(280, 87%, 65%)
+  );
+
+  /* default background images */
+  --background-image-mobile: url('./images/bg-mobile-light.jpg');
+  --background-image-desktop: url('/images/bg-desktop-light.jpg');
+}
+
+[data-theme='light'] {
+  /* colors */
+  --color-bg: hsl(236, 33%, 92%);
+  --color-todo-list-bg: hsl(0, 0%, 98%);
+  --color-todo-h1: hsl(0, 0%, 98%);
+  --color-todo-text: hsla(237, 14%, 26%, 1);
+  --color-filter-text: hsla(236, 9%, 61%, 1);
+  --color-text-completed: hsl(233, 11%, 84%);
+  --color-text-active: hsla(237, 14%, 26%, 1);
+  --color-todo-border: hsla(233, 11%, 84%, 1);
+  --color-surface-hover: hsl(236, 33%, 92%);
+
+  /* background images for light theme */
+  --background-image-mobile: url('./images/bg-mobile-light.jpg');
+  --background-image-desktop: url('./images/bg-desktop-light.jpg');
+}
+
+[data-theme='dark'] {
+  /* colors */
+  --color-bg: hsl(235, 21%, 11%);
+  --color-todo-list-bg: hsl(235, 24%, 19%);
+  --color-todo-text: hsl(234, 39%, 85%);
+  --color-text-completed: hsl(234, 11%, 52%);
+  --color-text-active: hsl(0, 0%, 98%);
+  --color-todo-border: hsl(233, 14%, 35%);
+  --color-surface-hover: hsl(236, 33%, 92%);
+
+  /* background images for dark theme */
+  --background-image-mobile: url('./images/bg-mobile-dark.jpg');
+  --background-image-desktop: url('./images/bg-desktop-dark.jpg');
+}
+
 body {
-  font-family: sans-serif;
+  background-color: var(--color-bg);
+  background-image: var(--background-image-mobile);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: var(--font-primary);
   box-sizing: border-box;
+  padding: 1.5em;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  color: var(--color-todo-h1);
+  letter-spacing: 0.75rem;
+}
+
+.moon-btn {
+  display: block;
+}
+
+.sun-btn {
+  display: none;
+}
+
+/* media queries */
+
+@media (min-width: 768px) {
+  body {
+    background-image: var(--background-image-desktop);
+  }
 }
 
 button,
