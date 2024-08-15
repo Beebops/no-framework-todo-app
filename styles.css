@@ -73,6 +73,10 @@ h1 {
   letter-spacing: 0.75rem;
 }
 
+p {
+  margin: 0;
+}
+
 form {
   margin-bottom: 1.5em;
 }
@@ -215,6 +219,10 @@ input[type='checkbox']:checked:after {
 .todo-completed {
   color: var(--color-text-completed);
   text-decoration-line: line-through;
+}
+
+.clear-completed-btn:hover {
+  color: var(--color-text-active);
 }
 
 /* delete button */
