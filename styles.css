@@ -20,10 +20,10 @@
   --color-bg: hsl(236, 33%, 92%);
   --color-todo-list-bg: hsl(0, 0%, 98%);
   --color-todo-h1: hsl(0, 0%, 98%);
-  --color-todo-text: hsla(237, 14%, 26%, 1);
+  --color-todo-text: hsla(237, 14%, 45%, 1);
   --color-filter-text: hsla(236, 9%, 61%, 1);
   --color-text-completed: hsl(233, 11%, 84%);
-  --color-text-active: hsla(237, 14%, 26%, 1);
+  --color-text-active: hsla(237, 14%, 9%, 1);
   --color-todo-border: hsla(233, 11%, 84%, 1);
   --color-surface-hover: hsl(236, 33%, 92%);
 
@@ -77,18 +77,24 @@ form {
   margin-bottom: 1.5em;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: var(--color-todo-list-bg);
+}
+
 button {
   all: unset;
   cursor: pointer;
 }
 
-.todo-circle-btn {
-  background-color: transparent;
-  border-radius: 50%;
-}
-
 input {
   border: none;
+}
+
+::placeholder {
+  color: hsl(236, 9%, 61%);
 }
 
 label {
@@ -96,7 +102,15 @@ label {
   color: var(--color-todo-text);
 }
 
+nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5em;
+  background-color: var(--color-todo-list-bg);
+}
+
 ul,
+nav,
 .todo-input-container {
   border-radius: 5px;
 }
@@ -105,24 +119,6 @@ li,
 .todo-input-container,
 .filter-options {
   padding: 1em 1.5em;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background-color: var(--color-todo-list-bg);
-}
-
-.todo-item-li {
-  margin: 0;
-  border-bottom: 0.125rem solid var(--color-bg);
-  display: flex;
-  justify-content: space-between;
-}
-
-li:last-child {
-  border-bottom: none;
 }
 
 .todo-circle-btn,
@@ -135,23 +131,9 @@ input[type='checkbox'] {
   border: 1px solid var(--color-text-completed);
 }
 
-::placeholder {
-  color: hsl(236, 9%, 61%);
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5em;
-  background-color: var(--color-todo-list-bg);
-}
-
-.filter-options {
-  display: flex;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-}
+/****************************/
+/* To Do Form */
+/****************************/
 
 .todo-input-container {
   display: flex;
@@ -168,11 +150,27 @@ nav {
 }
 
 .todo-circle-btn {
+  background-color: transparent;
+  border-radius: 50%;
   order: 1;
 }
 
-/* checkbox styling */
+/****************************/
+/* To Dos List */
+/****************************/
 
+.todo-item-li {
+  margin: 0;
+  border-bottom: 0.125rem solid var(--color-bg);
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-item-li:last-child {
+  border-bottom: none;
+}
+
+/* checkbox styling */
 .check-box-wrapper {
   display: flex;
   align-items: center;
@@ -203,7 +201,6 @@ input[type='checkbox']:after {
 /* Hover effect - gradient applied to border-color */
 input[type='checkbox']:hover {
   background-image: var(--color-primary-check-bg);
-  /* border-color: hsl(280, 87%, 65%); */
 }
 
 /* Checked state - applies gradient background */
@@ -223,6 +220,25 @@ input[type='checkbox']:checked:after {
 /* delete button */
 .fa-x {
   font-weight: 500;
+}
+
+/****************************/
+/* Nav Filter Options  */
+/****************************/
+
+.filter-options {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.filter-options-item:hover {
+  color: var(--color-text-active);
+}
+
+.selected-filter-item {
+  color: var(--color-primary-accent);
 }
 
 /* light-dark mode toggle */
