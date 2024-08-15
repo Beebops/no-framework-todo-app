@@ -9,6 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title>To Do List</title>
   </head>
@@ -44,15 +48,47 @@
     </header>
     <main>
       <form id="todo-form">
-        <label for="todo-input"></label>
-        <input
-          type="text"
-          id="todo-input"
-          aria-label="create a new todo"
-          placeholder="Create a new todo..."
-        />
-        <button type="submit" id="todo-btn" class="todo-btn">Add</button>
+        <div class="todo-input-container">
+          <label for="todo-input"></label>
+          <input
+            class="todo-input"
+            type="text"
+            id="todo-input"
+            aria-label="create a new todo"
+            placeholder="Create a new todo..."
+          />
+          <button
+            type="submit"
+            id="todo-circle-btn"
+            class="todo-circle-btn"
+          ></button>
+        </div>
       </form>
+
+      <ul id="todos-list" class="todos-list">
+        <li class="todo-item-li">
+          <div class="check-box-wrapper">
+            <input
+              type="checkbox"
+              id="todo-id"
+              name="todo-name"
+              value="todo-name"
+            />
+            <label class="todo-label" for="todo-id">Walk Henry</label>
+          </div>
+        </li>
+        <li class="todo-item-li">
+          <div class="check-box-wrapper">
+            <input
+              type="checkbox"
+              id="todo-id"
+              name="todo-name"
+              value="todo-name"
+            />
+            <label class="todo-label" for="todo-id">Feed Henry</label>
+          </div>
+        </li>
+      </ul>
 
       <!-- <div class="todo-input-container">
         <input id="todo-input" type="text" placeholder="add a todo" />
