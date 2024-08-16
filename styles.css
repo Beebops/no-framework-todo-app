@@ -106,22 +106,15 @@ label {
   color: var(--color-todo-text);
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5em;
-  background-color: var(--color-todo-list-bg);
-}
-
 ul,
-nav,
+.filter-options,
 .todo-input-container {
   border-radius: 5px;
 }
 
 li,
 .todo-input-container,
-.filter-options {
+.filter-options-ul {
   padding: 1em 1.5em;
 }
 
@@ -235,6 +228,13 @@ input[type='checkbox']:checked:after {
 /****************************/
 
 .filter-options {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5em;
+  background-color: var(--color-todo-list-bg);
+}
+
+.filter-options-ul {
   display: flex;
   align-items: center;
   padding: 0;
