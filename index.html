@@ -105,7 +105,7 @@
           </div>
           <button class="delete-btn"><i class="fa-solid fa-x"></i></button>
         </li>
-        <li class="todo-item-li" id="todos-list-last-child">
+        <li class="todo-item-li todo-item-li-mobile" id="todos-list-last-child">
           <p>3 items left</p>
           <button class="clear-completed-btn">Clear completed</button>
         </li>
@@ -123,7 +123,7 @@
         role="group"
         aria-label="filter options"
         id="filter-options"
-        class="filter-options"
+        class="filter-options filter-options-mobile"
       >
         <ul class="filter-options-ul">
           <li class="filter-options-item selected-filter-item">
@@ -136,6 +136,28 @@
             <button aria-label="filter by complete">Complete</button>
           </li>
         </ul>
+      </div>
+
+      <!-- filter options for larger screens -->
+      <div
+        role="group"
+        aria-label="filter options"
+        id="filter-options"
+        class="filter-options filter-options-desktop"
+      >
+        <p>3 items left</p>
+        <ul class="filter-options-ul">
+          <li class="filter-options-item selected-filter-item">
+            <button aria-label="filter by all">All</button>
+          </li>
+          <li class="filter-options-item">
+            <button aria-label="filter by active">Active</button>
+          </li>
+          <li class="filter-options-item">
+            <button aria-label="filter by complete">Complete</button>
+          </li>
+        </ul>
+        <button class="clear-completed-btn">Clear completed</button>
       </div>
     </main>
     <!-- <script src="index.js" type="module"></script> -->

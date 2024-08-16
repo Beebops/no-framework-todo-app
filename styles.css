@@ -36,6 +36,7 @@
   /* colors */
   --color-bg: hsl(235, 21%, 11%);
   --color-todo-list-bg: hsl(235, 24%, 19%);
+  --color-todo-h1: hsl(0, 0%, 98%);
   --color-todo-text: hsl(234, 39%, 85%);
   --color-text-completed: hsl(234, 11%, 52%);
   --color-text-active: hsl(0, 0%, 98%);
@@ -249,6 +250,10 @@ input[type='checkbox']:checked:after {
   color: var(--color-primary-accent);
 }
 
+.filter-options-desktop {
+  display: none;
+}
+
 /* light-dark mode toggle */
 .moon-btn {
   display: block;
@@ -275,5 +280,22 @@ input[type='checkbox']:checked:after {
 
   main {
     min-width: 75%;
+  }
+
+  .filter-options-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    padding: 0.5em 1.5em;
+    margin: 0;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    color: var(--color-text-completed);
+  }
+
+  .todo-item-li-mobile,
+  .filter-options-mobile {
+    display: none;
   }
 }
