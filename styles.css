@@ -109,12 +109,14 @@ label {
 
 ul,
 .filter-options,
-.todo-input-container {
+.todo-input-container,
+.list-item-info-mobile {
   border-radius: 5px;
 }
 
 li,
 .todo-input-container,
+.list-item-info-mobile,
 .filter-options-ul {
   padding: 1em 1.5em;
 }
@@ -164,8 +166,16 @@ input[type='checkbox'] {
   justify-content: space-between;
 }
 
-.todo-item-li:last-child {
-  border-bottom: none;
+.list-item-info-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  margin: 0;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  color: var(--color-text-completed);
+  background: var(--color-todo-list-bg);
 }
 
 /* checkbox styling */
@@ -295,6 +305,7 @@ input[type='checkbox']:checked:after {
   }
 
   .todo-item-li-mobile,
+  .list-item-info-mobile,
   .filter-options-mobile {
     display: none;
   }
